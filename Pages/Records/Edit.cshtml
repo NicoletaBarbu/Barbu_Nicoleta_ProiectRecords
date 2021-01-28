@@ -1,0 +1,65 @@
+﻿@page
+@model Barbu_Nicoleta_ProiectRecords.Pages.Records.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Record</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Record.ID" />
+            <div class="form-group">
+                <label asp-for="Record.Title" class="control-label"></label>
+                <input asp-for="Record.Title" class="form-control" />
+                <span asp-validation-for="Record.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.Artist" class="control-label"></label>
+                <input asp-for="Record.Artist" class="form-control" />
+                <span asp-validation-for="Record.Artist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.Price" class="control-label"></label>
+                <input asp-for="Record.Price" class="form-control" />
+                <span asp-validation-for="Record.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.ImageUrl" class="control-label"></label>
+                <input asp-for="Record.ImageUrl" class="form-control" />
+                <span asp-validation-for="Record.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.PublishingYear" class="control-label"></label>
+                <input asp-for="Record.PublishingYear" class="form-control" />
+                <span asp-validation-for="Record.PublishingYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.RecordhouseID" class="control-label"></label>
+                <input asp-for="Record.RecordhouseID" class="form-control" />
+                <span asp-validation-for="Record.RecordhouseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Record.GenreID" class="control-label"></label>
+                <input asp-for="Record.GenreID" class="form-control" />
+                <span asp-validation-for="Record.GenreID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

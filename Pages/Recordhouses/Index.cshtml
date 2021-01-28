@@ -1,0 +1,54 @@
+﻿@page
+@model Barbu_Nicoleta_ProiectRecords.Pages.Recordhouses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Record Houses</h1>
+
+<p>
+    <a asp-page="Create">Add new record house</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recordhouse[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recordhouse[0].RecordhouseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recordhouse[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recordhouse[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Recordhouse) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordhouseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

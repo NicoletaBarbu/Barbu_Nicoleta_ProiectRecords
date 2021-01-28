@@ -1,0 +1,44 @@
+﻿@page
+@model Barbu_Nicoleta_ProiectRecords.Pages.Recordhouses.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Recordhouse</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Recordhouse.RecordhouseName" class="control-label"></label>
+                <input asp-for="Recordhouse.RecordhouseName" class="form-control" />
+                <span asp-validation-for="Recordhouse.RecordhouseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recordhouse.Address" class="control-label"></label>
+                <input asp-for="Recordhouse.Address" class="form-control" />
+                <span asp-validation-for="Recordhouse.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recordhouse.Email" class="control-label"></label>
+                <input asp-for="Recordhouse.Email" class="form-control" />
+                <span asp-validation-for="Recordhouse.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
